@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emergency Service</title>
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./assets/logo-dark.png"
+      type="image/x-icon"
+    />
     <!-- font-awesome-cdn -->
     <link
       rel="stylesheet"
@@ -20,8 +24,72 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+    <header>
+      <nav class="flex justify-between items-center p-6 mx-8">
+        <div class="flex justify-between items-center gap-1.5">
+          <img class="w-[40px]" src="./assets/logo.png" alt="" />
+          <p class="text-[#006747] leading-5 font-bold">
+            Emergency <br />
+            Service
+          </p>
+        </div>
+        <div class="flex justify-between items-center gap-8">
+          <div
+            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
+          >
+            <span>0</span>
+            <img src="./assets/heart.png" alt="" class="w-[20px]" />
+          </div>
+          <div
+            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
+          >
+            <span>0</span><img src="assets/coin.png" alt="" class="w-[20px]" />
+          </div>
+          <div
+            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#00a63e] text-[#ffffff] rounded-3xl p-2 px-8 gap-2"
+          >
+            <span>0</span>
+            <p>Copy</p>
+          </div>
+        </div>
+      </nav>
+      <!-- banner section -->
+
+      <div class="banner p-5">
+        <img src="./assets/logo-dark.png" alt="" class="w-[70px] mx-auto" />
+        <p class="text-center text-white text-2xl font-bold my-4">
+          Emergency Service Directory
+        </p>
+        <p class="text-center text-white text-sm">
+          Government Emergency Services at Your Fingertip – A Project by
+          Government of the People’s Republic of Bangladesh
+        </p>
+      </div>
+    </header>
+    <!-- main work started from here -->
+    <main>
+      <!-- cart section and call history section container -->
+      <!-- cart section container -->
+      <div class="w-11/12 mx-auto flex items-center justify-between gap-4">
+        <div class="border-2 border-red-500 w-9/12">
+          <div>
+            <img src="./assets/emergency.png" alt="" />
+            <span><i class="fa-regular fa-heart"></i></span>
+          </div>
+          <p>Emergency Number</p>
+          <p>Emergency</p>
+          <span>999</span>
+          <p>Alert</p>
+        </div>
+        <!-- call history section container -->
+        <div class="grid-cols-3 border-2 border-green-500 w-3/12">
+          call history
+        </div>
+      </div>
+    </main>
     <script src="./index.js"></script>
   </body>
 </html>
