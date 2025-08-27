@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <header>
+    <header class="">
       <nav class="flex items-center justify-between p-6 mx-8">
         <div class="flex justify-between items-center gap-1.5">
           <img class="w-[40px]" src="./assets/logo.png" alt="" />
@@ -36,28 +36,36 @@
             Service
           </p>
         </div>
+        <!-- NAV for COUNTERS -->
         <div class="flex items-center justify-between gap-8">
+          <!-- Wishlist -->
           <div
-            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
+            id="wishlistCounter"
+            class="wishlist flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
             <span>0</span>
             <img src="./assets/heart.png" alt="" class="w-[20px]" />
           </div>
+          <!-- Coins -->
           <div
-            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
+            id="coinsCounter"
+            class="coins flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
-            <span>0</span><img src="assets/coin.png" alt="" class="w-[20px]" />
+            <span>100</span>
+            <img src="assets/coin.png" alt="" class="w-[20px]" />
           </div>
+          <!-- Copy -->
           <div
-            class="flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#00a63e] text-[#ffffff] rounded-3xl p-2 px-8 gap-2"
+            id="copyCounter"
+            class="copy flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#00a63e] text-[#ffffff] rounded-3xl p-2 px-8 gap-2"
           >
             <span>0</span>
             <p>Copy</p>
           </div>
         </div>
       </nav>
-      <!-- banner section -->
 
+      <!-- banner section -->
       <div class="p-5 banner">
         <img src="./assets/logo-dark.png" alt="" class="w-[70px] mx-auto" />
         <p class="my-4 text-2xl font-bold text-center text-white">
@@ -69,66 +77,78 @@
         </p>
       </div>
     </header>
+
     <main>
       <!-- cart and call history container -->
-      <div class="bg-[#fafafa]">
-        <div class="w-11/12 flex gap-6 mx-auto my-8">
+      <div class="bg-[#fafafa] py-8">
+        <div class="w-11/12 flex gap-6 mx-auto">
           <!-- LEFT: 9 cards -->
-          <div class="w-9/12 grid grid-cols-3 gap-4">
-            <!-- card 1 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+          <div id="cardsContainer" class="w-9/12 grid grid-cols-3 gap-4">
+            <!-- Each card -->
+            <!-- cart-1 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/emergency.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">National Emergency Number</p>
+              <p class="service-name text-xl font-bold">
+                National Emergency Number
+              </p>
               <p class="text-sm text-[#5C5C5C] mb-3">National Emergency</p>
-              <span class="text-xl font-bold">999</span>
+              <span class="service-number text-xl font-bold">999</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 All
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 2 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-2 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/police.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Police Helpline Number</p>
+              <p class="service-name text-xl font-bold">
+                Police Helpline Number
+              </p>
               <p class="text-sm text-[#5C5C5C] mb-3">Police</p>
-              <span class="text-xl font-bold">999</span>
+              <span class="service-number text-xl font-bold">999</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Police
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 3 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-3 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img
@@ -137,177 +157,205 @@
                     class="w-[25px]"
                   />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Fire Service Number</p>
+              <p class="service-name text-xl font-bold">Fire Service Number</p>
               <p class="text-sm text-[#5C5C5C] mb-3">Fire Service</p>
-              <span class="text-xl font-bold">999</span>
+              <span class="service-number text-xl font-bold">999</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Fire
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 4 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-4 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/ambulance.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Ambulance Service Number</p>
-              <p class="text-sm text-[#5C5C5C] mb-3">Ambulance Service</p>
-              <span class="text-xl font-bold">019-9991142</span>
+              <p class="service-name text-xl font-bold">Ambulance Service</p>
+              <p class="text-sm text-[#5C5C5C] mb-3">Ambulance</p>
+              <span class="service-number text-xl font-bold">1994-999999</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Health
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 5 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-5 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/emergency.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Women & Child Helpline</p>
+              <p class="service-name text-xl font-bold">
+                Women & Child Helpline
+              </p>
               <p class="text-sm text-[#5C5C5C] mb-3">Women & Child Helpline</p>
-              <span class="text-xl font-bold">109</span>
+              <span class="service-number text-xl font-bold">109</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Help
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 6 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-6 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/emergency.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Anti-Corruption Helpline</p>
+              <p class="service-name text-xl font-bold">
+                Anti-Corruption Helpline
+              </p>
               <p class="text-sm text-[#5C5C5C] mb-3">Anti-Corruption</p>
-              <span class="text-xl font-bold">106</span>
+              <span class="service-number text-xl font-bold">106</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Govt.
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 7 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-7  -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
                   <img src="./assets/emergency.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Electricity Helpline</p>
+              <p class="service-name text-xl font-bold">Electricity Helpline</p>
               <p class="text-sm text-[#5C5C5C] mb-3">Electricity Outage</p>
-              <span class="text-xl font-bold">16216</span>
+              <span class="service-number text-xl font-bold">16216</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[80px] text-center text-sm text-[#5C5C5C] my-1"
               >
-                Alert
+                Electricity
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 8 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-8  -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
-                  <img src="./assets/emergency.png" alt="" class="w-[25px]" />
+                  <img src="./assets/brac.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold">Brac Helpline</p>
+              <p class="service-name text-xl font-bold">Brac Helpline</p>
               <p class="text-sm text-[#5C5C5C] mb-3">Brac</p>
-              <span class="text-xl font-bold">16445</span>
+              <span class="service-number text-xl font-bold">16445</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 NGO
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
             </div>
-
-            <!-- card 9 -->
-            <div class="p-4 bg-white border rounded-md shadow">
+            <!-- cart-9 -->
+            <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
-                  <img src="./assets/emergency.png" alt="" class="w-[25px]" />
+                  <img src="./assets/Bangladesh-Railway.png" alt="" class="w-[25px]" />
                 </figure>
-                <span><i class="fa-regular fa-heart"></i></span>
+                <span class="wishlist-btn"
+                  ><i class="fa-regular fa-heart"></i
+                ></span>
               </div>
-              <p class="text-xl font-bold"> Bangladesh Railway Helpline</p>
+              <p class="service-name text-xl font-bold">
+                Bangladesh Railway Helpline
+              </p>
               <p class="text-sm text-[#5C5C5C] mb-3">Bangladesh Railway</p>
-              <span class="text-xl font-bold">163</span>
+              <span class="service-number text-xl font-bold">163</span>
               <p
-                class="bg-[#F2F2F2] rounded-xl w-[60px] text-center text-sm text-[#5C5C5C] my-1"
+                class="bg-[#F2F2F2] rounded-4xl p-1 w-[60px] text-center text-sm text-[#5C5C5C] my-1"
               >
                 Travel
               </p>
-              <div class="flex items-center justify-between mt-2">
-                <button class="w-[110px] btn btn-neutral btn-outline">
+              <div class="flex items-center justify-between mt-2 px-3">
+                <button
+                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="btn bg-[#00A63E] text-white w-[110px]">
+                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
@@ -315,12 +363,21 @@
           </div>
 
           <!-- RIGHT: call history -->
-          <aside class="w-3/12 border p-4 rounded-md bg-white shadow">
-            <h2 class="text-lg font-bold mb-4">Call History</h2>
-            <ul class="space-y-2">
-              <li class="text-sm text-gray-600">Call to 999</li>
-              <li class="text-sm text-gray-600">Call to Fire Service</li>
-              <li class="text-sm text-gray-600">Call to Ambulance</li>
+          <aside class="w-3/12  p-4 rounded-md bg-white shadow">
+            <div class="flex justify-between items-center my-4">
+              <h2 class="text-lg font-bold mb-4">
+                <span><i class="fa-solid fa-clock-rotate-left"></i></span> Call
+                History
+              </h2>
+              <button
+                id="clearHistoryBtn"
+                class="w-[110px] btn border-none bg-[#00A63E] text-[#FFFFFF] rounded-3xl"
+              >
+                Clear
+              </button>
+            </div>
+            <ul id="callHistory" class="space-y-2">
+              <!-- Calls will be appended here by JS -->
             </ul>
           </aside>
         </div>
