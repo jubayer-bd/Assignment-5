@@ -39,7 +39,7 @@ document.querySelectorAll(".card").forEach((card) => {
       alert("Not enough coins to make a call!");
       return;
     }
-    alert(`Calling ${serviceName} $({serviceNumber})`);
+    alert(`Calling ${serviceName} ${serviceNumber}`);
     coins -= 20;
     coinsCounter.textContent = coins;
 

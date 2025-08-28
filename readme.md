@@ -1,165 +1,61 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
-
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
-
-### 📅 No Deadline For 50 marks
-
-### 📅 Deadline For 30 marks: Any time after 29th August.
-
----
-
-## ✅ Main Requirements (50 Marks)
-
-### 1. Navbar
-
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
-
----
-
-### 2. Hero Section
-
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
-
----
-
-### 2. Main Section
-
-This Section will have layout as figma
-
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
-
-### Emergency Hotline Section
-
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
-
-### History Section
-
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
-
----
-
-### 3. Responsiveness (5 Marks)
-
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+
+getElementById(): এই পদ্ধতিতে শুধুমাত্র id অ্যাট্রিবিউট ব্যবহার করে একটি নির্দিষ্ট উপাদান ব্যবহার করা হয়। HTML-এ id একটি (unique) অ্যাট্রিবিউট হওয়ায় , এই পদ্ধতিতে শুধুমাত্র একটি উপাদানই ব্যবহার করা যায় ।
+
+getElementsByClassName(): এই পদ্ধতিতে class অ্যাট্রিবিউট ব্যবহার করে একাধিক উপাদান ব্যবহার করা হয়। এটি একটি HTMLCollection তৈরি করে , যেখানে সেই class -এর সমস্ত উপাদান থাকে ।
+
+querySelector(): এই পদ্ধতিতে CSS সিলেক্টর ব্যবহার করে একটি উপাদান নির্বাচন করে। এটি CSS সিলেক্টরের এর প্রথম উপাদানটি ফিরিয়ে দেয়।
+
+querySelectorAll(): এটিও CSS সিলেক্টর ব্যবহার করে, তবে এটি সিলেক্টরের সাথে মেলে এমন সমস্ত উপাদান একটি NodeList হিসেবে ফিরিয়ে দেয়।
+
 2. How do you **create and insert a new element into the DOM**?
+   ১. উপাদান তৈরি করা (createElement)
+   document.createElement() পদ্ধতি ব্যবহার করে একটি নতুন HTML উপাদান তৈরি করা যায়।
+
+যেমন:
+// একটি নতুন div তৈরি করা হলো
+const newDiv = document.createElement('div');
+newDiv.textContent = 'hi!';
+২. উপাদান প্রবেশ করানো (appendChild / insertBefore)
+নতুন তৈরি করা উপাদানটিকে DOM-এ প্রবেশ করানোর জন্য appendChild() বা insertBefore() ব্যবহার করুন।
+
+appendChild(): একটি প্যারেন্ট উপাদানের শেষে নতুন উপাদান যোগ করে।
+
+document.body.appendChild(newDiv);
+insertBefore(): একটি নির্দিষ্ট রেফারেন্স উপাদানের পূর্বে নতুন উপাদান যোগ করে।
+
+JavaScript
+
+const targetElement = document.getElementById('myElement');
+document.body.insertBefore(newDiv, targetElement);
+
 3. What is **Event Bubbling** and how does it work?
-4. What is **Event Delegation** in JavaScript? Why is it useful?
-5. What is the difference between **preventDefault() and stopPropagation()** methods?
+   ইভেন্ট বাবলিং (Event Bubbling) হল DOM-এ একটি ইভেন্টের প্রচার পদ্ধতি
 
----
+কীভাবে এটি কাজ করে?
+ধরুন, একটি <div> এর ভেতরে একটি <button> আছে। যখন আপনি <button> এ ক্লিক করেন, তখন প্রথমে click ইভেন্টটি <button> এর উপর ঘটে। এরপর এই ইভেন্টটি বাবলিং প্রক্রিয়ার মাধ্যমে তার প্যারেন্ট <div> এ চলে যায়। যদি <div> এর প্যারেন্ট অন্য কোনো উপাদান হয়, ইভেন্টটি সেখানেও যায়। এভাবে ইভেন্টটি সবচেয়ে উপরের উপাদান পর্যন্ত পৌঁছায়।
 
-## 🧪 Challenges Part (10 Marks)
+What is **Event Delegation** in JavaScript? Why is it useful?
 
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
+ইভেন্ট ডেলিগেশন হল JavaScript-এর একটি কৌশল, যেখানে একাধিক চাইল্ড উপাদানের জন্য পৃথকভাবে ইভেন্ট লিসেনার না দিয়ে, তাদের সাধারণ প্যারেন্ট উপাদানে একটিমাত্র লিসেনার যুক্ত করা হয়।
 
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
+ইভেন্ট ডেলিগেশন গুরুত্বপূর্ণ কারণ এটি:
 
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
+১. কর্মক্ষমতা বাড়ায়: এটি অনেকগুলো ইভেন্ট লিসেনারের পরিবর্তে শুধুমাত্র একটি লিসেনার ব্যবহার করে, যা মেমরি ব্যবহার কমায় এবং পারফরম্যান্স উন্নত করে।
 
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
+২. ডাইনামিক উপাদান নিয়ন্ত্রণ করে: এটি DOM-এ নতুন করে যুক্ত হওয়া উপাদানের জন্যও কাজ করে, কারণ নতুন উপাদানের জন্য আলাদা করে আর কোনো ইভেন্ট লিসেনার যুক্ত করতে হয় না।
 
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
+৩. কোডকে সহজ রাখে: এটি কোডকে আরও সংক্ষিপ্ত এবং সহজে রক্ষণাবেক্ষণযোগ্য করে তোলে।
 
-💡Hint: Search Google with that below question
+What is the difference between **preventDefault() and stopPropagation()** methods?
 
-```bash
-How to get current local time in js
-```
+<!-- preventDefault() -->
 
----
+preventDefault() ইভেন্টের ডিফল্ট অ্যাকশন (default action) বন্ধ করে। অর্থাৎ, ব্রাউজারের যে স্বাভাবিক আচরণ আছে, সেটি ঘটতে বাধা দেয়।
+যেমন:
+একটি <form> সাবমিট হলে সাধারণত পৃষ্ঠা রিলোড হয়। event.preventDefault() ব্যবহার করে এই রিলোড বন্ধ করা যায়।
 
-## ⚙️ Technology Stack
+<!-- stopPropagation()  -->
 
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+stopPropagation() এটি একটি ইভেন্টের প্রচারকে তার প্যারেন্ট উপাদানে (parent element) ছড়িয়ে পড়া থেকে আটকায়।
+যদি <button> এ ইভেন্ট লিসেনারে event.stopPropagation() ব্যবহার করা হয়, তাহলে <button> এ ক্লিক করার পর ইভেন্টটি <div>-এর দিকে আর ছড়িয়ে পড়বে না এবং <div>-এর ইভেন্টটি ট্রিগার হবে না।
