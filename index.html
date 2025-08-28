@@ -42,26 +42,23 @@
         <div class="flex items-center justify-between gap-8">
           <!-- Wishlist -->
           <div
-            id="wishlistCounter"
             class="wishlist flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
-            <span>0</span>
+            <span id="wishlistCounter">0</span>
             <img src="./assets/heart.png" alt="" class="w-[20px]" />
           </div>
           <!-- Coins -->
           <div
-            id="coinsCounter"
             class="coins flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
-            <span>100</span>
+            <span id="coinsCounter">100</span>
             <img src="assets/coin.png" alt="" class="w-[20px]" />
           </div>
           <!-- Copy -->
           <div
-            id="copyCounter"
             class="copy flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#00a63e] text-[#ffffff] rounded-3xl p-2 px-8 gap-2"
           >
-            <span>0</span>
+            <span id="copyCounter">0</span>
             <p>Copy</p>
           </div>
         </div>
@@ -116,13 +113,17 @@
               >
                 All
               </p>
-              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
+              <div
+                class="flex items-center md:justify-between  mt-2 md:px-3 p-0 "
+              >
                 <button
-                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                  class="copy-btn md:w-[110px] w-[65px] btn border text-[#5C5C5C] bg-white"
                 >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
-                <button class="call-btn btn bg-[#00A63E] text-white w-[110px]">
+                <button
+                  class="call-btn btn bg-[#00A63E] text-white md:w-[110px] w-[65px]"
+                >
                   <span><i class="fa-solid fa-phone"></i></span>Call
                 </button>
               </div>
@@ -149,7 +150,7 @@
               </p>
               <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
-                  class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
+                  class="copy-btn md:w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
                   <span><i class="fa-regular fa-copy"></i></span>Copy
                 </button>
@@ -400,6 +401,11 @@
         </div>
       </div>
     </main>
+    <!-- Toast -->
+    <div
+      id="toast"
+      class="fixed top-4 right-4 hidden bg-green-600 text-white px-4 py-2 rounded-lg shadow whitespace-nowrap"
+    ></div>
 
     <script src="./index.js"></script>
   </body>

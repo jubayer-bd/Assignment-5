@@ -1,18 +1,22 @@
-// ===== Grab Counters =====
-const wishlistCounter = document.querySelector("#wishlistCounter span");
-const coinsCounter = document.querySelector("#coinsCounter span");
-const copyCounter = document.querySelector("#copyCounter span");
+// Counters on the navbar
+// const wishlistCounter = document.querySelector("#wishlistCounter span");
+const wishlistCounter = document.getElementById("wishlistCounter");
 
-// ===== Grab Call History =====
+// const coinsCounter = document.querySelector("#coinsCounter span");
+const coinsCounter = document.getElementById("coinsCounter");
+// const copyCounter = document.querySelector("#copyCounter span");
+const copyCounter = document.getElementById("copyCounter");
+
+//  Call History
 const callHistory = document.getElementById("callHistory");
 const clearHistoryBtn = document.getElementById("clearHistoryBtn");
 
-// ===== Initial Values =====
+//  Initial Values
 let wishlistCount = 0;
 let copyCount = 0;
 let coins = parseInt(coinsCounter.textContent);
 
-// ===== Loop Through All Cards =====
+//  Loop for All Cards
 document.querySelectorAll(".card").forEach((card) => {
   const serviceName = card.querySelector(".service-name").textContent;
   const serviceNumber = card.querySelector(".service-number").textContent;
@@ -20,8 +24,8 @@ document.querySelectorAll(".card").forEach((card) => {
   const callBtn = card.querySelector(".call-btn");
   const wishlistBtn = card.querySelector(".wishlist-btn");
 
-  // ---- Copy Button ----
-  copyBtn.addEventListener("click", () => {
+  //  Copy Button
+  copyBtn.addEventListener("click", function () {
     navigator.clipboard.writeText(serviceNumber).then(() => {
       copyCount++;
       copyCounter.textContent = copyCount;
@@ -35,11 +39,9 @@ document.querySelectorAll(".card").forEach((card) => {
       alert("Not enough coins to make a call!");
       return;
     }
-
+    alert(`Calling ${serviceName} $({serviceNumber})`);
     coins -= 20;
     coinsCounter.textContent = coins;
-
-    alert(`Calling ${serviceName} (${serviceNumber})`);
 
     // add history
     const li = document.createElement("li");
@@ -51,7 +53,15 @@ document.querySelectorAll(".card").forEach((card) => {
         <p class="font-bold">${serviceName}</p>
         <p class="text-sm text-gray-600">${serviceNumber}</p>
       </div>
-      <span class="text-sm text-gray-500">${new Date().toLocaleTimeString()}</span>
+      <span class="text-sm text-gray-500">${new Date().toLocaleTimeString(
+        "en-US",
+        {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        }
+      )}</span>
     `;
 
     callHistory.prepend(li); // newest on top
