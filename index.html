@@ -28,7 +28,9 @@
   </head>
   <body>
     <header class="">
-      <nav class="flex items-center justify-between p-6 mx-8">
+      <nav
+        class="flex flex-col md:flex-row gap-6 items-center justify-between p-6 mx-8"
+      >
         <div class="flex justify-between items-center gap-1.5">
           <img class="w-[40px]" src="./assets/logo.png" alt="" />
           <p class="text-[#006747] leading-5 font-bold">
@@ -67,8 +69,14 @@
 
       <!-- banner section -->
       <div class="p-5 banner">
-        <img src="./assets/logo-dark.png" alt="" class="w-[70px] mx-auto" />
-        <p class="my-4 text-2xl font-bold text-center text-white">
+        <img
+          src="./assets/logo-dark.png"
+          alt=""
+          class="md:w-[70px] w-[50px] mx-auto"
+        />
+        <p
+          class="my-2 md:my-4 md:text-2xl text-2xl font-bold text-center text-white"
+        >
           Emergency Service Directory
         </p>
         <p class="text-sm text-center text-white">
@@ -81,9 +89,12 @@
     <main>
       <!-- cart and call history container -->
       <div class="bg-[#fafafa] py-8">
-        <div class="w-11/12 flex gap-6 mx-auto">
+        <div class="w-11/12 flex md:gap-6 gap-1.5 md:mx-auto mx-auto">
           <!-- LEFT: 9 cards -->
-          <div id="cardsContainer" class="w-9/12 grid grid-cols-3 gap-4">
+          <div
+            id="cardsContainer"
+            class="md:w-9/12 w-7/12 grid md:grid-cols-3 grid-cols-1 md:gap-4 gap-2"
+          >
             <!-- Each card -->
             <!-- cart-1 -->
             <div class="card p-4 bg-white rounded-md shadow">
@@ -105,7 +116,7 @@
               >
                 All
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -136,7 +147,7 @@
               >
                 Police
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -169,7 +180,7 @@
               >
                 Fire
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -198,7 +209,7 @@
               >
                 Health
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -229,7 +240,7 @@
               >
                 Help
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -260,7 +271,7 @@
               >
                 Govt.
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -289,7 +300,7 @@
               >
                 Electricity
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -318,7 +329,7 @@
               >
                 NGO
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -333,7 +344,11 @@
             <div class="card p-4 bg-white rounded-md shadow">
               <div class="flex justify-between mb-2">
                 <figure class="bg-[#ffe3e2] p-2 rounded-xl">
-                  <img src="./assets/Bangladesh-Railway.png" alt="" class="w-[25px]" />
+                  <img
+                    src="./assets/Bangladesh-Railway.png"
+                    alt=""
+                    class="w-[25px]"
+                  />
                 </figure>
                 <span class="wishlist-btn"
                   ><i class="fa-regular fa-heart"></i
@@ -349,7 +364,7 @@
               >
                 Travel
               </p>
-              <div class="flex items-center justify-between mt-2 px-3">
+              <div class="flex items-center justify-between mt-2 md:px-3 p-0">
                 <button
                   class="copy-btn w-[110px] btn border text-[#5C5C5C] bg-white"
                 >
@@ -363,15 +378,17 @@
           </div>
 
           <!-- RIGHT: call history -->
-          <aside class="w-3/12  p-4 rounded-md bg-white shadow">
-            <div class="flex justify-between items-center my-4">
-              <h2 class="text-lg font-bold mb-4">
+          <aside
+            class="md:w-3/12 w-[180px] md:p-4 p-2 rounded-md bg-white shadow"
+          >
+            <div class="flex justify-between items-center my-4 gap-1">
+              <h2 class="md:text-lg text-sm font-bold mb-4">
                 <span><i class="fa-solid fa-clock-rotate-left"></i></span> Call
                 History
               </h2>
               <button
                 id="clearHistoryBtn"
-                class="w-[110px] btn border-none bg-[#00A63E] text-[#FFFFFF] rounded-3xl"
+                class="md:w-[110px] w-[40x] btn border-none bg-[#00A63E] text-[#FFFFFF] rounded-3xl"
               >
                 Clear
               </button>
