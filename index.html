@@ -44,21 +44,21 @@
           <div
             class="wishlist flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
-            <span id="wishlistCounter">0</span>
+            <span id="wishlistCounter" class="font-bold">0</span>
             <img src="./assets/heart.png" alt="" class="w-[20px]" />
           </div>
           <!-- Coins -->
           <div
             class="coins flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#41ff6b1a] rounded-3xl p-2 px-8 gap-2"
           >
-            <span id="coinsCounter">100</span>
+            <span id="coinsCounter" class="font-bold">100</span>
             <img src="assets/coin.png" alt="" class="w-[20px]" />
           </div>
           <!-- Copy -->
           <div
             class="copy flex justify-between items-center min-w-[70px] min-h-[20px] bg-[#00a63e] text-[#ffffff] rounded-3xl p-2 px-8 gap-2"
           >
-            <span id="copyCounter">0</span>
+            <span id="copyCounter" class="font-bold">0</span>
             <p>Copy</p>
           </div>
         </div>
@@ -409,17 +409,12 @@
               </button>
             </div>
             <ul id="callHistory" class="space-y-2">
-              <!-- Calls will be appended here by JS -->
+              <!-- Calls  -->
             </ul>
           </aside>
         </div>
       </div>
     </main>
-    <!-- Toast -->
-    <div
-      id="toast"
-      class="fixed top-4 right-4 hidden bg-green-600 text-white px-4 py-2 rounded-lg shadow whitespace-nowrap"
-    ></div>
 
     <script src="./index.js"></script>
   </body>

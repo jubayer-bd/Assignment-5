@@ -17,7 +17,7 @@ let copyCount = 0;
 let coins = parseInt(coinsCounter.textContent);
 
 //  Loop for All Cards
-document.querySelectorAll(".card").forEach((card) => {
+document.querySelectorAll(".card").forEach(function (card) {
   const serviceName = card.querySelector(".service-name").textContent;
   const serviceNumber = card.querySelector(".service-number").textContent;
   const copyBtn = card.querySelector(".copy-btn");
@@ -33,13 +33,13 @@ document.querySelectorAll(".card").forEach((card) => {
     });
   });
 
-  // ---- Call Button ----
-  callBtn.addEventListener("click", () => {
+  //  Call Button
+  callBtn.addEventListener("click", function()  {
     if (coins < 20) {
-      alert("Not enough coins to make a call!");
+      alert(" ❌Not enough coins to make a call! You need at least 20 coins.");
       return;
     }
-    alert(`Calling ${serviceName} ${serviceNumber}`);
+    alert(`📞Calling ${serviceName} ${serviceNumber} ...`);
     coins -= 20;
     coinsCounter.textContent = coins;
 
@@ -67,14 +67,14 @@ document.querySelectorAll(".card").forEach((card) => {
     callHistory.prepend(li); // newest on top
   });
 
-  // ---- Wishlist Button ----
-  wishlistBtn.addEventListener("click", () => {
+  //  Wishlist Button
+  wishlistBtn.addEventListener("click", function()  {
     wishlistCount++;
     wishlistCounter.textContent = wishlistCount;
   });
 });
 
-// ===== Clear Call History =====
-clearHistoryBtn.addEventListener("click", () => {
+//  Clear Call History
+clearHistoryBtn.addEventListener("click", function()  {
   callHistory.innerHTML = "";
 });
